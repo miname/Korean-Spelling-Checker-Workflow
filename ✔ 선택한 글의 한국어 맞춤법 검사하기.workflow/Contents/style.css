@@ -1,0 +1,123 @@
+#tableResult td {
+  font-size: 14px;
+  font-family: 'Apple SD Gothic Neo', sans-serif;
+  line-height: 1.7;
+}
+
+#tableResult td::selection {
+  background: rgba(255, 209, 129, .6);
+}
+
+font.ul {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+font.ul:focus {
+  outline: none;
+  background-color: #ffdc00;
+}
+
+font.ul.corrected {
+  border-bottom: thin dotted black !important;
+  font-weight: normal;
+}
+
+#tableLeft1 font {
+  position: relative;
+}
+
+.tdLT {
+  padding-right: 8px;
+  text-align: right;
+}
+
+.nav > li, .tdETNor {
+  padding: 5px 8px;
+  text-align: left;
+}
+
+.tdBugReport {
+  width: 250px !important;
+}
+
+.btnBugReport {
+  float: right;
+  color: black;
+}
+
+.ui-button, #btnOrgCopy, #btnGoBackEditor {
+  display: none;
+}
+
+#tooltip, #tooltip::after {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .1s;
+}
+
+#tooltip.is-shown, #tooltip.is-shown::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltip {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: #d7d7d7;
+  box-shadow: 0 0 2px gray;
+  color: black;
+  text-align: right;
+  font: normal 14px sans-serif;
+  line-height: 1.7;
+}
+
+#tooltip::after {
+  top: 100%;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-top: 8px solid #d7d7d7;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  content: '';
+}
+
+#pResultLTitle3 {
+  padding: 0;
+  font-size: 12px;
+  line-height: normal;
+}
+
+#newVersion {
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  width: 92px;
+  height: 80px;
+  text-shadow: 0 0 1px #999;
+  font: bold 13px sans-serif;
+  cursor: pointer;
+}
+
+#newVersion a {
+  position: absolute;
+  top: 20px;
+  padding: 3px 10px;
+  width: 100px;
+  background: linear-gradient(to right, #b20000, #dd0000);
+  box-shadow: 0 0 4px rgba(0,0,0,0.4), inset 0 2px 6px rgba(255,255,255,0.4);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#newVersion a:hover, #newVersion a:focus { color: #ffdc00; }
