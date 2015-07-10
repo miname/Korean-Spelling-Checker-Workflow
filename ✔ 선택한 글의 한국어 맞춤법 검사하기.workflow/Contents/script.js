@@ -63,6 +63,7 @@ window.setTimeout(function () {
       var firstCandidate = '&darr; ' + wordCandidates.shift();
       wordCandidates.unshift(firstCandidate);
       tooltip.innerHTML = wordCandidates.reverse().join('<br>');
+      tooltip.innerHTML = tooltip.innerHTML.replace(/…/g, '⋯');
     } else {
       hideTooltip();
     }
