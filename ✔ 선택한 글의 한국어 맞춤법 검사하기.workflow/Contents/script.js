@@ -11,12 +11,57 @@ window.setTimeout(function () {
     help.innerHTML = help.innerHTML.replace('<br>', '');
   });
 
-  // get correct words for the swap and add event listeners.
-  var correctionWords = document.querySelectorAll('font.ul');
+  var correctionWords = document.querySelectorAll('#divLeft1 font.ul');
+
+  // fix malformed correction words
+  var userInputElementsForCorrectionWord = document.querySelectorAll('#divCorrectionTableBox1st .tdErrWord a');
+  var noOfWordsWeShouldBreakApart = userInputElementsForCorrectionWord.length - correctionWords.length;
+
+  var targetElement, ID, counter = 0;
+  while (noOfWordsWeShouldBreakApart > 0) {
+    targetElement = document.querySelectorAll('#divLeft1 font.ul')[counter++];
+    ID = targetElement.id.replace('ul_', '');
+    checkWordBreakErrorsAndFixIt(targetElement, ID);
+  }
+
+  function checkWordBreakErrorsAndFixIt(target, ID) {
+    var targetText = target.textContent.replace('\n', '');
+    var ID_Number = parseInt(ID, 10);
+    var userInputText = userInputElementsForCorrectionWord[ID_Number].textContent;
+    if (targetText !== userInputText) {
+      var HTMLToReplace = userInputText.concat(constructAndReturnWordBreakDelimiter(ID_Number));
+      target.parentElement.innerHTML = target.parentElement.innerHTML.replace(userInputText, HTMLToReplace);
+      --noOfWordsWeShouldBreakApart;
+    }
+  }
+
+  function constructAndReturnWordBreakDelimiter(ID_Number) {
+    var userInputElement = userInputElementsForCorrectionWord[ID_Number], userInputErrorColor;
+    switch (window.getComputedStyle(userInputElement).getPropertyValue('color')) {
+      case 'rgb(255, 0, 0)':
+        userInputErrorColor = 'red';
+        break;
+      case 'rgb(0, 0, 255)':
+        userInputErrorColor = 'blue';
+        break;
+      case 'rgb(0, 128, 0)':
+        userInputErrorColor = 'green';
+        break;
+      case 'rgb(128, 128, 0)':
+        userInputErrorColor = 'Olive';
+        break;
+      default:
+        userInputErrorColor = '';
+    }
+    return '</font><font id="ul_' + (ID_Number + 1) + '" color="' + userInputErrorColor + '" class="ul" onclick="fShowHelp(\'' + (ID_Number + 1) + '\')">';
+  }
+
+  // prepare tooltips
+  correctionWords = document.querySelectorAll('#divLeft1 font.ul');
   [].forEach.call(correctionWords, function (word) {
     var ID = word.id.replace('ul_', '');
     var wordCandidates = [];
-    var wordCandidateElements = document.querySelectorAll('#tdReplaceWord_' + ID)[0].querySelectorAll('li:not(.liUserInputCandidate) a');
+    var wordCandidateElements = document.querySelector('#tdReplaceWord_' + ID).querySelectorAll('li:not(.liUserInputCandidate) a');
     [].forEach.call(wordCandidateElements, function (element) {
       wordCandidates.push(element.textContent);
     });
@@ -51,13 +96,6 @@ window.setTimeout(function () {
     }
   }
 
-  function hideTooltip() {
-    var tooltipClass = tooltip.classList;
-    if (tooltipClass.contains('is-shown')) {
-      tooltipClass.remove('is-shown');
-    }
-  }
-
   function updateTooltip(wordCandidates) {
     if (wordCandidates.length !== 0) {
       var firstCandidate = '&darr; ' + wordCandidates.shift();
@@ -66,6 +104,13 @@ window.setTimeout(function () {
       tooltip.innerHTML = tooltip.innerHTML.replace(/…/g, '⋯');
     } else {
       hideTooltip();
+    }
+  }
+
+  function hideTooltip() {
+    var tooltipClass = tooltip.classList;
+    if (tooltipClass.contains('is-shown')) {
+      tooltipClass.remove('is-shown');
     }
   }
 
@@ -100,7 +145,7 @@ window.setTimeout(function () {
   }
 
   // style the wrong words.
-  var wrongWords = document.querySelectorAll('font.ul');
+  var wrongWords = document.querySelectorAll('#divLeft1 font.ul');
   [].forEach.call(wrongWords, function (word) {
     word.style.borderBottomColor = word.getAttribute('color');
   });
