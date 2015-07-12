@@ -67,7 +67,7 @@ IMG_PATH=$BASE_URL/images
 KSC_PATH="$(pwd)/Library/Services/✔%20선택한%20글의%20한국어%20맞춤법%20검사하기.workflow/Contents"
 SCRIPT_PATH=$KSC_PATH/script.js
 STYLE_PATH=$KSC_PATH/style.css
-UPDATE=2015-7-7
+UPDATE=2015-7-12
 UPDATE_STATUS=$(curl -s -o /dev/null -I -w "%{http_code}" http://appletree.or.kr/automator/$UPDATE.txt)
 curl --data-urlencode "text1=$INPUT_TEXT" $CHECK_URL -o .korean-spelling-checker-result.html &amp;&amp; sed -i -e "s|\.\./|$BASE_URL/|g" .korean-spelling-checker-result.html &amp;&amp; sed -i -e "s|\./|$LIB_PATH/|g" .korean-spelling-checker-result.html &amp;&amp; sed -i -e "s|&lt;/head&gt;|&lt;link rel='stylesheet' href='$STYLE_PATH'&gt;&lt;script defer src='$SCRIPT_PATH' id='ksc' data-update-status='$UPDATE_STATUS'&gt;&lt;/script&gt;&lt;base href='$IMG_PATH/'&gt;&lt;/head&gt;|" .korean-spelling-checker-result.html &amp;&amp; echo "$(&lt;~/.korean-spelling-checker-result.html)"</string>
 					<key>CheckedForUserDefaultShell</key>
@@ -718,28 +718,28 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>9CCFFA12-0AF9-4966-A8A4-B93F1A3385FB</key>
+		<key>3B73829D-51F4-43A3-973A-9467979EEF1D</key>
 		<dict>
 			<key>from</key>
-			<string>157E60AD-BDC2-47BA-AC49-DBB1238843FE - 157E60AD-BDC2-47BA-AC49-DBB1238843FE</string>
+			<string>A383693E-041B-4167-87B6-880984093A75 - A383693E-041B-4167-87B6-880984093A75</string>
 			<key>to</key>
-			<string>1B0DE756-2B2A-4CAB-904A-4DD0698C5BDD - 1B0DE756-2B2A-4CAB-904A-4DD0698C5BDD</string>
+			<string>157E60AD-BDC2-47BA-AC49-DBB1238843FE - 157E60AD-BDC2-47BA-AC49-DBB1238843FE</string>
 		</dict>
-		<key>AA1EF6B0-110B-4EB3-A5C0-73C9BB97B76D</key>
+		<key>82F74834-91BC-4DEB-B94A-1F109059C50A</key>
 		<dict>
 			<key>from</key>
 			<string>FA70C623-5521-4F12-BDC2-EAA8754F12F2 - FA70C623-5521-4F12-BDC2-EAA8754F12F2</string>
 			<key>to</key>
 			<string>A383693E-041B-4167-87B6-880984093A75 - A383693E-041B-4167-87B6-880984093A75</string>
 		</dict>
-		<key>B6E4E2E4-E9D6-4CF9-836F-6E60038C33CA</key>
+		<key>9EE6D683-D85C-4AD1-B37B-AA9F43BEBA92</key>
 		<dict>
 			<key>from</key>
-			<string>A383693E-041B-4167-87B6-880984093A75 - A383693E-041B-4167-87B6-880984093A75</string>
-			<key>to</key>
 			<string>157E60AD-BDC2-47BA-AC49-DBB1238843FE - 157E60AD-BDC2-47BA-AC49-DBB1238843FE</string>
+			<key>to</key>
+			<string>1B0DE756-2B2A-4CAB-904A-4DD0698C5BDD - 1B0DE756-2B2A-4CAB-904A-4DD0698C5BDD</string>
 		</dict>
-		<key>D0C87F02-1B99-4215-8FDE-2471B99F8025</key>
+		<key>B6D03CBB-81FC-4591-80D4-2B9047BD320D</key>
 		<dict>
 			<key>from</key>
 			<string>C657C251-C7D7-42DE-9B3C-9A6F476546D5 - C657C251-C7D7-42DE-9B3C-9A6F476546D5</string>
