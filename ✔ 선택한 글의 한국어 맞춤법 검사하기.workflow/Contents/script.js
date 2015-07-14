@@ -62,13 +62,12 @@ window.setTimeout(function () {
   var scrollHeight = scrollDiv.scrollHeight;
 
   if (scrollHeight > divHeight) {
-    var progressBar, scrollPercent;
-    var progress = document.createElement('progress');
-    progress.setAttribute('id', 'progressBar');
-    progress.setAttribute('value', 0);
-    progress.setAttribute('max', 100);
-    document.getElementById('tdResultLTitle1').appendChild(progress);
-    progressBar = document.getElementById('progressBar');
+    var scrollPercent;
+    var progressBar = document.createElement('progress');
+    progressBar.setAttribute('id', 'progressBar');
+    progressBar.setAttribute('value', 0);
+    progressBar.setAttribute('max', 100);
+    document.getElementById('tdResultLTitle1').appendChild(progressBar);
     var updateProgress = function () {
       scrollPercent = (scrollDiv.scrollTop / (scrollHeight - divHeight)) * 100;
       progressBar.setAttribute('value', scrollPercent);
