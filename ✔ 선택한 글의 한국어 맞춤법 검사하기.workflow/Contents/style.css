@@ -53,6 +53,12 @@ font.ul.corrected {
   display: none;
 }
 
+#progressBar {
+  float: right;
+  margin-top: 7px;
+  margin-right: 5px;
+}
+
 #tooltip, #tooltip::after {
   position: absolute;
   visibility: hidden;

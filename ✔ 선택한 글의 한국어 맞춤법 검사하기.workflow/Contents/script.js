@@ -56,6 +56,26 @@ window.setTimeout(function () {
     return '</font><font id="ul_' + (ID_Number + 1) + '" color="' + userInputErrorColor + '" class="ul" onclick="fShowHelp(\'' + (ID_Number + 1) + '\')">';
   }
 
+  // if the content of user input needs scroll, display the progress bar.
+  var scrollDiv = document.getElementById('divLeft1');
+  var divHeight = scrollDiv.offsetHeight;
+  var scrollHeight = scrollDiv.scrollHeight;
+
+  if (scrollHeight > divHeight) {
+    var progressBar, scrollPercent;
+    var progress = document.createElement('progress');
+    progress.setAttribute('id', 'progressBar');
+    progress.setAttribute('value', 0);
+    progress.setAttribute('max', 100);
+    document.getElementById('tdResultLTitle1').appendChild(progress);
+    progressBar = document.getElementById('progressBar');
+    var updateProgress = function () {
+      scrollPercent = (scrollDiv.scrollTop / (scrollHeight - divHeight)) * 100;
+      progressBar.setAttribute('value', scrollPercent);
+    };
+    scrollDiv.addEventListener('scroll', updateProgress);
+  }
+
   // prepare tooltips
   correctionWords = document.querySelectorAll('#divLeft1 font.ul');
   [].forEach.call(correctionWords, function (word) {
@@ -90,7 +110,7 @@ window.setTimeout(function () {
     var wordCandidates = wordGotAttention.dataset.kscWordCandidates.split(';');
     if (wordCandidates[0] !== '') {
       updateTooltip(wordCandidates);
-      tooltip.style.bottom = wordGotAttention.offsetParent.offsetHeight + document.getElementById('divLeft1').scrollTop - wordGotAttention.offsetTop + 10 + 'px';
+      tooltip.style.bottom = wordGotAttention.offsetParent.offsetHeight + scrollDiv.scrollTop - wordGotAttention.offsetTop + 10 + 'px';
       tooltip.style.left = wordGotAttention.offsetLeft + 'px';
       tooltip.classList.add('is-shown');
     }
