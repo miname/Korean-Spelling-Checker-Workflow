@@ -158,12 +158,12 @@ window.setTimeout(function () {
   // select the proofread text to copy the content to clipboard before closing the window.
   var selectProofreadText = function () {
     window.getSelection().selectAllChildren(document.getElementById('tdCorrection1stBox'));
-  }
+  };
   document.getElementById('tableTail').addEventListener('mouseover', selectProofreadText, false);
 
   var removeSelection = function () {
     window.getSelection().removeAllRanges();
-  }
+  };
   document.getElementById('tdBody').addEventListener('mouseenter', removeSelection, false);
 
   // if new updates available, show the notice.
