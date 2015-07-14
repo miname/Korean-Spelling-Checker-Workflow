@@ -103,6 +103,11 @@ window.setTimeout(function () {
     showTooltip(event);
   }
 
+  // inject tooltip span
+  var tooltip = document.createElement('span');
+  tooltip.setAttribute('id', 'tooltip');
+  document.getElementById('tableResult').appendChild(tooltip);
+
   // fill the tooltip content and display it
   function showTooltip(event) {
     var wordGotAttention = event.target;
@@ -168,11 +173,6 @@ window.setTimeout(function () {
   [].forEach.call(wrongWords, function (word) {
     word.style.borderBottomColor = word.getAttribute('color');
   });
-
-  // inject tooltip span
-  var tooltip = document.createElement('span');
-  tooltip.id = 'tooltip';
-  document.getElementById('tableResult').appendChild(tooltip);
 
   // select the proofread text to copy the content to clipboard before closing the window.
   var selectProofreadText = function () {
