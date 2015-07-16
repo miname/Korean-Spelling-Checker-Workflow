@@ -8,6 +8,20 @@
   background: rgba(255, 209, 129, .6);
 }
 
+#divLeft1, .divCorrectionTableBoxStyle {
+  border-color: #d5d7d9;
+}
+
+#tdForResultLTitle3 {
+  background-color: #d5d7d9;
+}
+
+#pResultLTitle3 {
+  padding: 0;
+  font-size: 12px;
+  line-height: normal;
+}
+
 font.ul {
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -91,12 +105,6 @@ font.ul.corrected {
   border-right: 8px solid transparent;
   border-left: 8px solid transparent;
   content: '';
-}
-
-#pResultLTitle3 {
-  padding: 0;
-  font-size: 12px;
-  line-height: normal;
 }
 
 #newVersion {
