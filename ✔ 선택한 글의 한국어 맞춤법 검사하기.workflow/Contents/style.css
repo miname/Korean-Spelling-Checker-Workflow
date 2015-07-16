@@ -54,9 +54,8 @@ font.ul.corrected {
 }
 
 #progressBar {
-  float: right;
-  margin-top: 7px;
-  margin-right: 5px;
+  float: left;
+  margin-left: 4px;
 }
 
 #tooltip, #tooltip::after {

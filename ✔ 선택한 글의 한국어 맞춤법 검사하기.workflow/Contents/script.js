@@ -67,7 +67,7 @@ window.setTimeout(function () {
     progressBar.setAttribute('id', 'progressBar');
     progressBar.setAttribute('value', 0);
     progressBar.setAttribute('max', 100);
-    document.getElementById('tdResultLTitle1').appendChild(progressBar);
+    document.getElementById('tdForResultLTitle3').appendChild(progressBar);
     var updateProgress = function () {
       scrollPercent = (scrollDiv.scrollTop / (scrollHeight - divHeight)) * 100;
       progressBar.setAttribute('value', scrollPercent);
