@@ -131,6 +131,7 @@ font.ul.corrected {
   top: 20px;
   padding: 3px 10px;
   width: 100px;
+  border: 2px solid yellow;
   background: linear-gradient(to right, #b20000, #dd0000);
   box-shadow: 0 0 4px rgba(0,0,0,0.4), inset 0 2px 6px rgba(255,255,255,0.4);
   color: white;
@@ -140,4 +141,4 @@ font.ul.corrected {
   transform: rotate(45deg);
 }
 
-#newVersion a:hover, #newVersion a:focus { color: #ffdc00; }
+#newVersion a:hover, #newVersion a:focus { color: #00ff70; }
