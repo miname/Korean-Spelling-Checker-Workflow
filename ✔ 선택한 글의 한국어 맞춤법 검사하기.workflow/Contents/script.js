@@ -197,4 +197,12 @@ window.setTimeout(function () {
     kscUpdateDiv.id = 'newVersion';
     document.getElementById('tdHead').appendChild(kscUpdateDiv);
   }
+
+  // adjustment for new interface mode
+  setTimeout(function () {
+    var correctionCandidates = document.querySelectorAll('.correction');
+    [].forEach.call(correctionCandidates, function (candidate) {
+      candidate.parentNode.removeChild(candidate);
+    });
+  }, 400);
 }, 800);

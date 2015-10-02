@@ -23,9 +23,10 @@
 }
 
 font.ul {
-  border-bottom-width: 2px;
+  margin-top: 0 !important;
+  border-bottom-width: 2px !important;
   border-bottom-style: solid;
-  color: black;
+  color: black !important;
   text-decoration: none;
   font-weight: bold;
 }
@@ -39,6 +40,12 @@ font.ul.corrected {
   border-bottom: thin dotted black !important;
   font-weight: normal;
 }
+
+.correction {
+  display: none;
+}
+
+#textUIChange { cursor: pointer;}
 
 #tableLeft1 font {
   position: relative;
