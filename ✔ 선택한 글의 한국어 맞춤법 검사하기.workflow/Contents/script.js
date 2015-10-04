@@ -75,7 +75,7 @@ window.setTimeout(function () {
     scrollDiv.addEventListener('scroll', updateProgress);
   }
 
-  // prepare tooltips
+  // prepare tooltips and style the correction words
   correctionWords = document.querySelectorAll('#divLeft1 font.ul');
   [].forEach.call(correctionWords, function (word) {
     var ID = word.id.replace('ul_', '');
@@ -92,6 +92,7 @@ window.setTimeout(function () {
     word.addEventListener('blur', hideTooltip, false);
     word.addEventListener('click', swapWord, false);
     word.addEventListener('keydown', handleKeyDown, false);
+    word.style.borderBottomColor = word.getAttribute('color');
   });
 
   function showCorrections(event) {
@@ -167,12 +168,6 @@ window.setTimeout(function () {
       event.target.click();
     }
   }
-
-  // style the wrong words.
-  var wrongWords = document.querySelectorAll('#divLeft1 font.ul');
-  [].forEach.call(wrongWords, function (word) {
-    word.style.borderBottomColor = word.getAttribute('color');
-  });
 
   // select the proofread text to copy the content to clipboard before closing the window.
   var selectProofreadText = function () {
