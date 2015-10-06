@@ -72,6 +72,13 @@ font.ul.corrected {
 
 #textUIChange { cursor: pointer;}
 
+#textUIChange:focus {
+  outline-style: none;
+  color: #ff4136;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 #tableLeft1 font {
   position: relative;
 }

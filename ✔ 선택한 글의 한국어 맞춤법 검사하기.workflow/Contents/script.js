@@ -202,8 +202,8 @@ window.setTimeout(function () {
           } else {
             continue;
           }
-    }
-  }
+        }
+      }
       word.innerHTML = wordText;
     }
   }
@@ -242,5 +242,8 @@ window.setTimeout(function () {
     [].forEach.call(correctionCandidates, function (candidate) {
       candidate.parentNode.removeChild(candidate);
     });
+    var changeUI = document.querySelector('#textUIChange');
+    changeUI.addEventListener('keydown', handleKeyDown, false);
+    changeUI.tabIndex = 1;
   }, 400);
 }, 800);
