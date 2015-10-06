@@ -1,7 +1,6 @@
 #tableResult td {
   font-size: 14px;
-  font-family: 'Apple SD Gothic Neo', sans-serif;
-  line-height: 1.7;
+  font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif;
 }
 
 #tableResult td::selection {
@@ -10,6 +9,10 @@
 
 #divLeft1, .divCorrectionTableBoxStyle {
   border-color: #d5d7d9;
+}
+
+#divLeft1 td {
+  line-height: 2;
 }
 
 #tdForResultLTitle3 {
@@ -23,8 +26,9 @@
 }
 
 font.ul {
-  margin-top: 0 !important;
-  border-bottom-width: 2px !important;
+  display: inline !important;
+  padding-bottom: 2px;
+  border-bottom-width: 1px !important;
   border-bottom-style: solid;
   color: black !important;
   text-decoration: none;
