@@ -41,6 +41,31 @@ font.ul.corrected {
   font-weight: normal;
 }
 
+.spaceError, .tieError {
+  position: relative;
+  font-style: normal;
+  pointer-events: none;
+}
+
+.spaceError::before, .tieError::before {
+  position: absolute;
+  color: #c1392b;
+}
+
+.spaceError::before {
+  top: -1em;
+  left: -0.15em;
+  content: '˅';
+  font-size: 1.6em;
+}
+
+.tieError::before {
+  top: -0.7em;
+  left: -0.55em;
+  content: '⁀';
+  font-size: 1em;
+}
+
 .correction {
   display: none;
 }

@@ -93,6 +93,8 @@ window.setTimeout(function () {
     word.addEventListener('click', swapWord, false);
     word.addEventListener('keydown', handleKeyDown, false);
     word.style.borderBottomColor = word.getAttribute('color');
+
+    markSpacingErrors(word, wordCandidates[0]);
   });
 
   function showCorrections(event) {
@@ -167,6 +169,45 @@ window.setTimeout(function () {
     if ((event.keycode === 13) || (event.keycode === 32) || (event.which === 13) || (event.which === 32)) { // enter or space
       event.target.click();
     }
+  }
+
+  function markSpacingErrors(word, candidate) {
+    var wordText = word.innerText;
+    if (hasSameOrderOfCharacters(wordText, candidate)) {
+      var wordComponents = wordText.split(' '),
+          candidateComponents = candidate.split(' '),
+          wordCompsLength = wordComponents.length,
+          candidateCompsLength = candidateComponents.length,
+          textToReplace, noOfErrorsToFix;
+      if (wordCompsLength > candidateCompsLength) {
+        noOfErrorsToFix = wordCompsLength - candidateCompsLength;
+        while (noOfErrorsToFix > 0) {
+          textToReplace = wordComponents.pop();
+          if (textToReplace !== candidateComponents.pop()) { // check if it's not spaced correctly
+            wordText = wordText.replace(new RegExp(textToReplace + '$'), '<i class="tieError">' + textToReplace + '</i>');
+            --noOfErrorsToFix;
+          } else {
+            continue;
+          }
+        }
+      } else {
+        noOfErrorsToFix = candidateCompsLength - wordCompsLength;
+        while (noOfErrorsToFix > 0) {
+          textToReplace = candidateComponents.pop();
+          if (textToReplace !== wordComponents.pop()) {
+            wordText = wordText.replace(textToReplace, '<i class="spaceError">' + textToReplace + '</i>');
+            --noOfErrorsToFix;
+          } else {
+            continue;
+          }
+    }
+  }
+      word.innerHTML = wordText;
+    }
+  }
+
+  function hasSameOrderOfCharacters(word1, word2) {
+    return word1.split(' ').join('') === word2.split(' ').join('');
   }
 
   // select the proofread text to copy the content to clipboard before closing the window.
