@@ -54,7 +54,7 @@ window.setTimeout(function () {
       default:
         userInputErrorColor = '';
     }
-    return '</font><font id="ul_' + (ID_Number + 1) + '" color="' + userInputErrorColor + '" class="ul" onclick="fShowHelp(\'' + (ID_Number + 1) + '\')">';
+    return '</font><font id="ul_' + (ID_Number + 1) + '" color="' + userInputErrorColor + '" class="ul">';
   }
 
   // if the content of user input needs scroll, display the progress bar.
@@ -99,7 +99,8 @@ window.setTimeout(function () {
   });
 
   function showCorrections(event) {
-    event.target.onclick();
+    var correctionID = event.target.id.replace('ul_', '');
+    document.querySelector('#tableErr_' + correctionID).scrollIntoView();
     [].forEach.call(correctionWords, function (word) {
       word.style.backgroundColor = 'inherit';
     });
