@@ -25,9 +25,10 @@ window.setTimeout(function () {
   }
 
   function checkWordBreakErrorsAndFixIt(target, ID) {
-    var targetText = target.textContent.replace('\n', '');
+    var targetText = target.textContent.replace(/\n/g, '');
     var ID_Number = parseInt(ID, 10);
     var userInputText = userInputElementsForCorrectionWord[ID_Number].textContent;
+    userInputText = userInputText.replace(/\n/g, '');
     if (targetText !== userInputText) {
       var HTMLToReplace = userInputText.concat(constructAndReturnWordBreakDelimiter(ID_Number));
       target.parentElement.innerHTML = target.parentElement.innerHTML.replace(userInputText, HTMLToReplace);
