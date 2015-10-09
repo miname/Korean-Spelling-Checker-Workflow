@@ -100,7 +100,9 @@ window.setTimeout(function () {
 
   function showCorrections(event) {
     var correctionID = event.target.id.replace('ul_', '');
-    document.querySelector('#tableErr_' + correctionID).scrollIntoView();
+    var correctionTable = document.querySelector('#tableErr_' + correctionID);
+    correctionTable.style.backgroundColor = '#ffffcc';
+    correctionTable.scrollIntoView();
     [].forEach.call(correctionWords, function (word) {
       word.style.backgroundColor = 'inherit';
     });
@@ -132,11 +134,13 @@ window.setTimeout(function () {
       tooltip.innerHTML = wordCandidates.reverse().join('<br>');
       tooltip.innerHTML = tooltip.innerHTML.replace(/…/g, '⋯');
     } else {
-      hideTooltip();
+      hideTooltip(event);
     }
   }
 
-  function hideTooltip() {
+  function hideTooltip(event) {
+    var correctionID = event.target.id.replace('ul_', '');
+    document.querySelector('#tableErr_' + correctionID).style.backgroundColor = 'transparent';
     var tooltipClass = tooltip.classList;
     if (tooltipClass.contains('is-shown')) {
       tooltipClass.remove('is-shown');
@@ -163,7 +167,7 @@ window.setTimeout(function () {
         }
       });
     } else {
-      hideTooltip();
+      hideTooltip(event);
     }
   }
 
