@@ -241,13 +241,12 @@ window.setTimeout(function () {
   }
 
   // adjustment for new interface mode
-  setTimeout(function () {
-    var correctionCandidates = document.querySelectorAll('.correction');
-    [].forEach.call(correctionCandidates, function (candidate) {
-      candidate.parentNode.removeChild(candidate);
-    });
-    var changeUI = document.querySelector('#textUIChange');
-    changeUI.addEventListener('keydown', handleKeyDown, false);
-    changeUI.tabIndex = 1;
-  }, 400);
+  var correctionCandidates = document.querySelectorAll('.correction');
+  [].forEach.call(correctionCandidates, function (candidate) {
+    candidate.parentNode.removeChild(candidate);
+  });
+  var changeUI = document.querySelector('#textUIChange');
+  changeUI.addEventListener('keydown', handleKeyDown, false);
+  changeUI.tabIndex = 1;
+  $('#divLeft1').unbind('click');
 }, 800);
