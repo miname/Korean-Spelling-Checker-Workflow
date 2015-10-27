@@ -6,10 +6,11 @@
 
 원문에 표시된 틀린 단어를 클릭하면 제시된 대치어로 자동으로 교정해주며, **교정을 마친 원문이 선택된 상태에서 맞춤법 검사기 창을 닫으면 자동으로 교정한 원문의 내용이 클립보드에 복사**되어, 다른 곳에 바로 붙여넣으실 수도 있습니다.
 
+![한국어 맞춤법 검사기 workflow 사용 화면](http://appletree.or.kr/automator/korean-spelling-checker-workflow.png)
+
 또한, **시스템 환경 설정 > 키보드 > 단축키 > 서비스 창의 Text 항목에서 단축키를 지정**하면 더 간편하게 맞춤법 검사를 실행할 수 있습니다.
 
 ![단축키 지정 화면](http://appletree.or.kr/automator/automator-workflow-keyboard-shortcut.png)
 
 ## [갱신 기록](CHANGELOG.md)
-
 ## [라이센스](LICENSE)
