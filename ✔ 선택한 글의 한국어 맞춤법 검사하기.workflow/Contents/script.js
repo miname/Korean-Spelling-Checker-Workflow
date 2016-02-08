@@ -237,7 +237,7 @@ window.setTimeout(function () {
     var kscUpdateLink = document.createElement('a');
     var kscUpdateLinkContent = document.createTextNode('새로운 버전!');
     kscUpdateLink.href = 'http://appletree.or.kr/forum/viewtopic.php?pid=951#p951';
-    kscUpdateLink.title = 'http://appletree.or.kr/safari-extensions/#ksc-workflow';
+    kscUpdateLink.title = '웹 브라우저에서 새로운 버전을 내려받으세요!';
     kscUpdateLink.appendChild(kscUpdateLinkContent);
     kscUpdateDiv.appendChild(kscUpdateLink);
     kscUpdateDiv.id = 'newVersion';
