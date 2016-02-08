@@ -151,13 +151,22 @@ window.setTimeout(function () {
     }
   }
 
+  // swap animations
+  var animationNames = ['bounce', 'pulse', 'swing', 'tada', 'bounceIn', 'bounceInDown', 'fadeInDown', 'flipInX', 'flipInY', 'rotateIn', 'rotateInDownLeft', 'zoomIn', 'zoomInDown'];
+  var animationName = animationNames[getRandomInt(0, animationNames.length)];
+
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
   function swapWord(event) {
     var wordGotAttention = event.target;
     var wordGotAttentionText = wordGotAttention.innerText;
     var wordCandidates = wordGotAttention.dataset.kscWordCandidates.split(';');
     var correctWord = wordCandidates.shift();
     if (correctWord !== '' && correctWord !== '대치어 없음') {
-      wordGotAttention.innerText = correctWord;
+      wordGotAttention.innerHTML = '<span>' + correctWord + '</span>';
+      wordGotAttention.childNodes[0].className = 'animated ' + animationName;
       wordGotAttention.dataset.kscWordCandidates = wordCandidates.join(';');
       wordGotAttention.classList.add('corrected');
       updateTooltip(wordCandidates);
@@ -165,7 +174,8 @@ window.setTimeout(function () {
       [].forEach.call(correctionWords, function (word) {
         if (word.innerText === wordGotAttentionText && word !== event.target) {
           wordCandidates = word.dataset.kscWordCandidates.split(';');
-          word.innerText = wordCandidates.shift();
+          word.innerHTML = '<span>' + wordCandidates.shift() + '</span>';
+          word.childNodes[0].className = 'animated ' + animationName;
           word.dataset.kscWordCandidates = wordCandidates.join(';');
           word.classList.add('corrected');
         }
