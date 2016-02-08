@@ -5,6 +5,10 @@ window.setTimeout(function () {
     link.removeAttribute('href');
   });
 
+  // Disable functions which are conflicting with my implementation
+  window.fShowHelp = null;
+  window.fChangeHelpTablePage = null;
+
   // remove line breaks in help text.
   var helpText = document.querySelectorAll('.tdETNor');
   [].forEach.call(helpText, function (help) {
@@ -248,5 +252,4 @@ window.setTimeout(function () {
   var changeUI = document.querySelector('#textUIChange');
   changeUI.addEventListener('keydown', handleKeyDown, false);
   changeUI.tabIndex = 1;
-  $('#divLeft1').unbind('click');
 }, 800);
