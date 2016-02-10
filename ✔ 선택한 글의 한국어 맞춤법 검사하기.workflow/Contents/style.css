@@ -181,7 +181,10 @@ font.ul.corrected {
   transform: rotate(45deg);
 }
 
-#newVersion a:hover, #newVersion a:focus { color: #00ff70; }
+#newVersion a:hover, #newVersion a:focus {
+  color: #ffdc00;
+  transition: color .4s ease-out;
+}
 
 /* CSS animations from Animate.css - https://daneden.github.io/animate.css/ */
 
