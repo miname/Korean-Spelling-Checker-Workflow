@@ -67,7 +67,7 @@ IMG_PATH=$BASE_URL/images
 KSC_PATH="$(pwd)/Library/Services/✔%20선택한%20글의%20한국어%20맞춤법%20검사하기.workflow/Contents"
 SCRIPT_PATH=$KSC_PATH/script.js
 STYLE_PATH=$KSC_PATH/style.css
-UPDATE=2015-10-9
+UPDATE=2016-02-10
 UPDATE_STATUS=$(curl -s -o /dev/null -I -w "%{http_code}" http://appletree.or.kr/automator/$UPDATE.txt)
 curl --data-urlencode "text1=$INPUT_TEXT" $CHECK_URL -o .korean-spelling-checker-result.html &amp;&amp; sed -i -e "s|\.\./|$BASE_URL/|g" .korean-spelling-checker-result.html &amp;&amp; sed -i -e "s|\./|$LIB_PATH/|g" .korean-spelling-checker-result.html &amp;&amp; sed -i -e "s|&lt;/head&gt;|&lt;link rel='stylesheet' href='$STYLE_PATH'&gt;&lt;script defer src='$SCRIPT_PATH' id='ksc' data-update-status='$UPDATE_STATUS'&gt;&lt;/script&gt;&lt;base href='$IMG_PATH/'&gt;&lt;/head&gt;|" .korean-spelling-checker-result.html &amp;&amp; echo "$(&lt;~/.korean-spelling-checker-result.html)"</string>
 					<key>CheckedForUserDefaultShell</key>
