@@ -186,6 +186,154 @@ font.ul.corrected {
   transition: color .4s ease-out;
 }
 
+.sparkle {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  opacity: 1;
+  transition: opacity .6s;
+  -webkit-animation: flyTo 2.8s ease-in-out;
+  animation: flyTo 2.8s ease-in-out;
+  pointer-events: none;
+}
+
+@-webkit-keyframes flyTo {
+  from {
+    -webkit-transform: translate(-500px, 20px);
+  }
+  80% {
+    -webkit-transform: translate(-20px, -10px);
+  }
+  to {
+    -webkit-transform: none;
+  }
+}
+
+@keyframes flyTo {
+  from {
+    transform: translate(-500px, 20px);
+  }
+  80% {
+    transform: translate(-20px, -10px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+#newVersion:hover ~ #sparkleDiv .sparkle {
+  opacity: 0;
+}
+
+.sparkle__group {
+  -webkit-transform: translate(42.5px,42.5px);
+  transform: translate(42.5px, 42.5px);
+}
+
+.sparkle path {
+  -webkit-transform: translate(-42.50px,-42.50px);
+  transform: translate(-42.50px,-42.50px);
+}
+
+.sparkle__large {
+  -webkit-animation: large 2.5s infinite;
+  animation: large 2.5s infinite;
+}
+
+.sparkle__large-2 {
+  -webkit-animation: large-2 2.5s infinite;
+  animation: large-2 2.5s infinite;
+}
+
+.sparkle__small {
+  -webkit-animation: small 2.5s infinite;
+  animation: small 2.5s infinite;
+}
+
+@-webkit-keyframes large {
+  from {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: rotate(360deg) scale(1.5);
+  }
+}
+
+@keyframes large {
+  from {
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+
+@-webkit-keyframes large-2 {
+  from {
+    opacity: 0;
+    -webkit-transform: rotate(45deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: rotate(405deg) scale(1.1);
+  }
+}
+
+@keyframes large-2 {
+  from {
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: rotate(405deg) scale(1.1);
+  }
+}
+
+@-webkit-keyframes small {
+  from {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: rotate(-360deg) scale(1);
+  }
+}
+
+@keyframes small {
+  from {
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: rotate(-360deg) scale(1.5);
+  }
+}
+
 /* CSS animations from Animate.css - https://daneden.github.io/animate.css/ */
 
 .animated {

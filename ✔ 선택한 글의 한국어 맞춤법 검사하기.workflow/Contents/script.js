@@ -252,6 +252,10 @@ window.setTimeout(function () {
     kscUpdateDiv.appendChild(kscUpdateLink);
     kscUpdateDiv.id = 'newVersion';
     document.getElementById('tdHead').appendChild(kscUpdateDiv);
+    var kscSparkleDiv = document.createElement('div');
+    kscSparkleDiv.id = 'sparkleDiv';
+    document.getElementById('tdHead').appendChild(kscSparkleDiv);
+    document.getElementById('sparkleDiv').innerHTML = '<svg class="sparkle" width="90" height="90" viewBox="0 0 90 90"><g class="sparkle__group" opacity="0.8"><g class="sparkle__large"><path id="sparkle__large" d="M41.25,40 L42.5,10 L43.75,40 L45, 41.25 L75,42.5 L45,43.75 L43.75,45 L42.5,75 L41.25,45 L40,43.75 L10,42.5 L40,41.25z" fill="gold" /></g><g class="sparkle__large-2" transform="rotate(45)"><use xlink:href="#sparkle__large" /></g><g class="sparkle__small"><path id="sparkle__small" d="M41.25,40 L42.5,25 L43.75,40 L45,41.25 L60,42.5 L45,43.75 L43.75,45 L42.5,60 L41.25,45 L40,43.75 L25,42.5 L40,41.25z" fill="gold" /></g></g></svg>';
   }
 
   // adjustment for new interface mode
