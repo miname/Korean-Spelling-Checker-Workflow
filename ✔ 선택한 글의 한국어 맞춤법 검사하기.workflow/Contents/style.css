@@ -1,3 +1,23 @@
+#tableMain {
+  height: 630px;
+}
+
+#tdBody {
+  height: 470px;
+}
+
+#divCorrectionTableBox1st {
+  height: 467px;
+}
+
+#divCorrectionTableBox1st table {
+  width: 425px;
+}
+
+#tableResult {
+  left: 10px;
+}
+
 #tableResult td {
   font-size: 14px;
   font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif;
@@ -7,7 +27,7 @@
   background: rgba(255, 209, 129, .6);
 }
 
-#divLeft1, .divCorrectionTableBoxStyle {
+#divLeft1, #divCorrectionTableBox1st {
   border-color: #d5d7d9;
 }
 
@@ -74,21 +94,17 @@ font.ul.corrected {
   display: none;
 }
 
-#textUIChange { cursor: pointer;}
-
-#textUIChange:focus {
-  outline-style: none;
-  color: #ff4136;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
 #tableLeft1 font {
   position: relative;
 }
 
 .tableErrCorrect {
+  margin-bottom: 0 !important;
   transition: background-color 0.6s ease-out;
+}
+
+.tableErrCorrect tbody tr:first-child .tdLT {
+  padding-top: 10px;
 }
 
 .tdLT {
@@ -96,8 +112,12 @@ font.ul.corrected {
   text-align: right;
 }
 
+.tdErrWord {
+  padding-top: 5px;
+}
+
 .nav > li, .tdETNor {
-  padding: 5px 8px;
+  padding: 5px 8px 10px;
   text-align: left;
 }
 
@@ -110,8 +130,12 @@ font.ul.corrected {
   color: black;
 }
 
-.ui-button, #btnOrgCopy, #btnGoBackEditor {
+.ui-button, #tdHead > a, #tableResult > tbody > tr:first-child, #tableButton, #divCorrectionTableBox1st td br:first-of-type, #divCorrectionTableBox1st table ~ br, .tableErrCorrect tr:nth-child(n+4), .tdETNor br:nth-last-of-type(2n), #divPopupBackground {
   display: none;
+}
+
+#tdHead {
+  font-size: 0;
 }
 
 #progressBar {
