@@ -5,10 +5,6 @@ window.setTimeout(function () {
     link.removeAttribute('href');
   });
 
-  // Disable functions which are conflicting with my implementation
-  window.fShowHelp = null;
-  window.fChangeHelpTablePage = null;
-
   var correctionWords = document.querySelectorAll('#divLeft1 font.ul');
 
   // fix malformed correction words
@@ -177,6 +173,7 @@ window.setTimeout(function () {
     } else {
       hideTooltip(event);
     }
+    event.stopImmediatePropagation();
   }
 
   function handleKeyDown(event) {
