@@ -31,6 +31,15 @@
   border-color: #d5d7d9;
 }
 
+#tdCorrection1stBox::before {
+  content:'';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
 #divLeft1 td {
   line-height: 2;
 }
@@ -136,11 +145,6 @@ font.ul.corrected {
 
 #tdHead {
   font-size: 0;
-}
-
-#progressBar {
-  float: left;
-  margin-left: 4px;
 }
 
 #tooltip, #tooltip::after {

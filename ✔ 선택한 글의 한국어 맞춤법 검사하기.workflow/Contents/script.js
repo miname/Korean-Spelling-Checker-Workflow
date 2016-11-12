@@ -51,24 +51,7 @@ window.setTimeout(function () {
     return '</font><font id="ul_' + (ID_Number + 1) + '" color="' + userInputErrorColor + '" class="ul">';
   }
 
-  // if the content of user input needs scroll, display the progress bar.
   var scrollDiv = document.getElementById('divLeft1');
-  var divHeight = scrollDiv.offsetHeight;
-  var scrollHeight = scrollDiv.scrollHeight;
-
-  if (scrollHeight > divHeight) {
-    var scrollPercent;
-    var progressBar = document.createElement('progress');
-    progressBar.setAttribute('id', 'progressBar');
-    progressBar.setAttribute('value', 0);
-    progressBar.setAttribute('max', 100);
-    document.getElementById('tdForResultLTitle3').appendChild(progressBar);
-    var updateProgress = function () {
-      scrollPercent = (scrollDiv.scrollTop / (scrollHeight - divHeight)) * 100;
-      progressBar.setAttribute('value', scrollPercent);
-    };
-    scrollDiv.addEventListener('scroll', updateProgress);
-  }
 
   // prepare tooltips and style the correction words
   correctionWords = document.querySelectorAll('#divLeft1 font.ul');
