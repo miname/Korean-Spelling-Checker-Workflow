@@ -60,7 +60,7 @@
 				<dict>
 					<key>COMMAND_STRING</key>
 					<string>INPUT_TEXT=$(tee)
-BASE_URL=http://speller.cs.pusan.ac.kr/PnuSpellerISAPI_201602
+BASE_URL=http://speller.cs.pusan.ac.kr/PnuWebSpeller
 LIB_PATH=$BASE_URL/lib
 CHECK_URL=$LIB_PATH/check.asp
 IMG_PATH=$BASE_URL/images
