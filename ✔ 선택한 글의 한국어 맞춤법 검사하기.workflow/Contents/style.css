@@ -31,6 +31,10 @@
   border-color: #d5d7d9;
 }
 
+#tdCorrection1stBox {
+  word-break: keep-all;
+}
+
 #tdCorrection1stBox::before {
   content:'';
   position: fixed;
