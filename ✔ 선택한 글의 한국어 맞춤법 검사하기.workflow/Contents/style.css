@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 #tableMain {
   height: 630px;
 }
@@ -18,6 +22,15 @@
   left: 10px;
 }
 
+#tableResult::before {
+  content:'';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
 #tableResult td {
   font-size: 14px;
   font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif;
@@ -33,15 +46,6 @@
 
 #tdCorrection1stBox {
   word-break: keep-all;
-}
-
-#tdCorrection1stBox::before {
-  content:'';
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
 }
 
 #divLeft1 td {
