@@ -220,8 +220,8 @@ window.setTimeout(function () {
     var kscUpdateDiv = document.createElement('div');
     var kscUpdateLink = document.createElement('a');
     var kscUpdateLinkContent = document.createTextNode('새로운 버전!');
-    kscUpdateLink.href = 'openkschome://com.apple.AppleScript.OpenKSCHome?appletree.or.kr/safari-extensions/#ksc-workflow';
-    kscUpdateLink.title = '웹 브라우저에서 새로운 버전을 내려받으세요!';
+    kscUpdateLink.href = 'https://appletree.or.kr/safari-extensions/#ksc-workflow';
+    kscUpdateLink.title = '오른쪽 클릭 후 주소를 복사하고 웹 브라우저에서 새로운 버전을 내려받으세요!';
     kscUpdateLink.appendChild(kscUpdateLinkContent);
     kscUpdateDiv.appendChild(kscUpdateLink);
     kscUpdateDiv.id = 'newVersion';

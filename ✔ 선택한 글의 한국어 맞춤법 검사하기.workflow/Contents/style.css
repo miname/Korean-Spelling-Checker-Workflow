@@ -199,7 +199,6 @@ font.ul.corrected {
   height: 80px;
   text-shadow: 0 0 1px #999;
   font: bold 13px sans-serif;
-  cursor: pointer;
 }
 
 #newVersion a {
@@ -215,6 +214,7 @@ font.ul.corrected {
   text-decoration: none;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  cursor: help;
 }
 
 #newVersion a:hover, #newVersion a:focus {
