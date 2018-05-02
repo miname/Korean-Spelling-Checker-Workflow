@@ -12,5 +12,13 @@
 
 ![단축키 지정 화면](https://appletree.or.kr/automator/automator-workflow-keyboard-shortcut2x.png)
 
+***
+
+![](https://appletree.or.kr/popclip/popclip-icon.png) 혹시, [PopClip](http://pilotmoon.com/popclip/)을 쓰고 계시나요? 그럼 클릭만으로 맞춤법 검사를 실행할 수 있는 아래의 PopClip extension도 함께 설치해 보세요.
+
+![한국어 맞춤법 검사기 workflow 전용 PopClip 실행 모습](https://appletree.or.kr/popclip/korean-spelling-checker-workflow-popclip-extension.png)
+
+[한국어 맞춤법 검사기 workflow 전용 PopClip extension 내려받기 ↓](https://appletree.or.kr/popclip/KoreanSpellingCheckerWorkflow.popclipextz)
+
 ## [갱신 기록](CHANGELOG.md)
 ## [라이센스](LICENSE)
