@@ -71,6 +71,7 @@ window.setTimeout(function () {
     word.addEventListener('click', swapWord, false);
     word.addEventListener('keydown', handleKeyDown, false);
     word.style.borderBottomColor = word.getAttribute('color');
+    word.removeAttribute('onclick'); // remove defective click event
 
     markSpacingErrors(word, wordCandidates[0]);
   });
