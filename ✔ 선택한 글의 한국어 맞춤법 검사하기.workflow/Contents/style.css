@@ -98,7 +98,7 @@ font.ul.corrected {
 }
 
 .spaceError::before {
-  top: -1em;
+  top: -0.9em;
   left: -0.15em;
   content: '˅';
   font-size: 1.6em;
