@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 INPUT_TEXT=$(tee)
 BASE_URL=http://speller.cs.pusan.ac.kr
 CHECK_URL=$BASE_URL/results
